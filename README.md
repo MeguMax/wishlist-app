@@ -147,7 +147,7 @@ wishlist-app/
 
 ### 1️⃣ Clone the repository
 
-git clone https://github.com/your-username/wishlist-app.git
+git clone https://github.com/MeguMax/wishlist-app.git
 cd wishlist-app
 
 ### 2️⃣ Install dependencies
