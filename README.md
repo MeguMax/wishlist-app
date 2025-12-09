@@ -1,4 +1,3 @@
-```markdown
 # 🎁 Wishlist App
 
 <div align="center">
@@ -11,7 +10,7 @@
 
 ### 🎯 Modern wishlist management app with gift sharing, real-time chat, and crowdfunding features
 
-[🔗 **Live Demo**](https://wishlist-app-nine.vercel.app) • [📖 **Documentation**](#-installation) • [🐛 **Report Bug**](https://github.com/your-username/wishlist-app/issues)
+[🔗 **Live Demo**](https://wishlist-app-nine.vercel.app) • [📖 **Documentation**](#-installation) • [🐛 **Report Bug**](https://github.com/MeguMax/wishlist-app/issues)
 
 </div>
 
@@ -86,7 +85,6 @@ Choose from 6 currencies: UAH (₴), USD ($), EUR (€), RUB (₽), PLN (zł), G
 
 ## 📁 Project Structure
 
-```
 wishlist-app/
 ├── src/
 │   ├── components/          # Reusable UI components
@@ -113,7 +111,6 @@ wishlist-app/
 ├── vercel.json
 ├── tailwind.config.js
 └── package.json
-```
 
 ---
 
@@ -149,24 +146,20 @@ wishlist-app/
 - Supabase account
 
 ### 1️⃣ Clone the repository
-```
+
 git clone https://github.com/your-username/wishlist-app.git
 cd wishlist-app
-```
 
 ### 2️⃣ Install dependencies
-```
+
 npm install
-```
 
 ### 3️⃣ Configure environment variables
 
 Create `.env` file in the root directory:
 
-```
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
 
 Get these values from your Supabase project: **Settings → API**
 
@@ -176,21 +169,18 @@ Get these values from your Supabase project: **Settings → API**
 2. Run the SQL migrations from `/database` folder
 3. Configure Row Level Security policies
 4. Enable Realtime for `group_messages` table:
-   ```
-   alter publication supabase_realtime add table group_messages;
-   ```
+
+alter publication supabase_realtime add table group_messages;
 
 ### 5️⃣ Start development server
-```
+
 npm run dev
-```
 
 App will open at `http://localhost:5173`
 
 ### 6️⃣ Build for production
-```
+
 npm run build
-```
 
 ---
 
@@ -279,6 +269,6 @@ MIT License — feel free to use this project for learning or your own purposes
 Made with ❤️ and lots of ☕
 
 </div>
-```
 
-***
+[1](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+[2](https://img.shields.io/badge/TypeScript-5.3-3178C6?style=for-the-badge)
