@@ -62,7 +62,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={user ? <Navigate to="/my-wishlist" /> : <Home />} />
                     <Route path="/login" element={!user ? <Login /> : <Navigate to="/my-wishlist" />} />
-                    <Route path="/register" element={!user ? <Signup /> : <Navigate to="/my-wishlist" />} />
+                    <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/my-wishlist" />} />
                     <Route path="/my-wishlist" element={user ? <MyWishlist user={user} /> : <Navigate to="/login" />} />
                     <Route path="/my-reservations" element={user ? <MyReservations user={user} /> : <Navigate to="/login" />} />
                     <Route path="/statistics" element={user ? <Statistics user={user} /> : <Navigate to="/login" />} />
