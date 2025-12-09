@@ -67,7 +67,7 @@ function App() {
                     <Route path="/my-reservations" element={user ? <MyReservations user={user} /> : <Navigate to="/login" />} />
                     <Route path="/statistics" element={user ? <Statistics user={user} /> : <Navigate to="/login" />} />
                     <Route path="/friends" element={user ? <Friends user={user} /> : <Navigate to="/login" />} />
-                    <Route path="/u/:username" element={<UserWishlist />} />
+                    <Route path="/u/:username" element={<UserWishlist currentUser={user} />} />
                     <Route path="/settings" element={user ? <Settings user={user} /> : <Navigate to="/login" />} />
                     <Route path="/groups" element={user ? <Groups user={user} /> : <Navigate to="/login" />} />
                     <Route
