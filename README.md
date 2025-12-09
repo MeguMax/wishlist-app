@@ -1,266 +1,284 @@
 ```markdown
 # 🎁 Wishlist App
 
-Современное веб-приложение для создания и управления списками желаний с возможностью совместной покупки подарков.
+<div align="center">
 
-[🔗 Live Demo](https://wishlist-app-nine.vercel.app)
+![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.4-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-2.39-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-![Wishlist App Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=Wishlist+App+Screenshot)
+### 🎯 Modern wishlist management app with gift sharing, real-time chat, and crowdfunding features
 
----
+[🔗 **Live Demo**](https://wishlist-app-nine.vercel.app) • [📖 **Documentation**](#-installation) • [🐛 **Report Bug**](https://github.com/your-username/wishlist-app/issues)
 
-## 🚀 Основные возможности
-
-### 👤 Управление профилем
-- Регистрация и аутентификация пользователей
-- Настраиваемый профиль с аватаром и биографией
-- Публичная ссылка на вишлист (`/u/username`)
-- Поддержка 6 валют: UAH, USD, EUR, RUB, PLN, GBP
-
-### 🎯 Списки желаний
-- Создание желаний с фото, описанием, ссылками и ценой
-- Организация в коллекции (День рождения, Новый год и т.д.)
-- Три уровня приоритета (низкий, средний, высокий)
-- Настройка приватности (публичные / друзья / приватные)
-
-### 👥 Социальные функции
-- Добавление друзей с категориями (семья, друзья, коллеги)
-- Просмотр вишлистов друзей
-- Бронирование подарков (скрыто от владельца)
-- Комментарии к желаниям
-
-### 💰 Складчина
-- Совместная покупка дорогих подарков
-- Отслеживание вкладов участников
-- Прогресс-бар собранной суммы
-
-### 🎉 Группы
-- Создание групп для событий (свадьба, корпоратив и т.д.)
-- Управление участниками (админ/участник)
-- Общие вишлисты группы
-- **Real-time чат** с участниками
-
-### 📊 Статистика
-- Количество желаний по приоритетам
-- Общая стоимость вишлиста
-- Забронированные и доступные подарки
-- Визуализация данных
-
-### 🎨 UX/UI
-- Адаптивный дизайн (desktop, tablet, mobile)
-- Тёмная/светлая тема с автоопределением
-- Плавные анимации и переходы
-- Toast-уведомления
-- Skeleton loaders
+</div>
 
 ---
 
-## 🛠️ Технологический стек
+## ✨ Key Features
+
+### 🎯 **Smart Wishlists**
+Create and organize your wishes with photos, descriptions, links, and estimated prices. Group items into collections for different events (Birthday, Christmas, Wedding, etc.)
+
+### 👥 **Social Network**
+Add friends with categories (Family, Friends, Colleagues), view their wishlists, and help them celebrate special moments by reserving gifts
+
+### 💰 **Group Contributions**
+Enable crowdfunding for expensive gifts. Friends can contribute any amount, and you can track the progress with a visual progress bar
+
+### 🎉 **Event Groups**
+Create groups for special occasions, invite members, manage permissions, and share group wishlists
+
+### 💬 **Real-time Chat**
+Instant messaging in event groups powered by Supabase Realtime subscriptions
+
+### 📊 **Analytics Dashboard**
+Track your wishlist statistics: total items, estimated value, reserved gifts, and priority distribution
+
+### 🎨 **Modern UI/UX**
+- Fully responsive design (mobile, tablet, desktop)
+- Dark/Light theme with auto-detection
+- Smooth animations and transitions
+- Toast notifications for user actions
+- Skeleton loaders for better perceived performance
+
+### 🌍 **Multi-currency Support**
+Choose from 6 currencies: UAH (₴), USD ($), EUR (€), RUB (₽), PLN (zł), GBP (£)
+
+---
+
+## 🛠️ Tech Stack
+
+<table>
+<tr>
+<td valign="top" width="50%">
 
 ### Frontend
-- **React 18** — UI библиотека
-- **TypeScript** — типизация
-- **Vite** — сборщик и dev-сервер
-- **React Router v6** — маршрутизация
-- **Tailwind CSS** — стилизация
-- **React Hot Toast** — уведомления
+- **React 18** — UI library
+- **TypeScript** — Type safety
+- **Vite** — Build tool & dev server
+- **React Router v6** — Client-side routing
+- **Tailwind CSS** — Utility-first styling
+- **React Hot Toast** — Notifications
+
+</td>
+<td valign="top" width="50%">
 
 ### Backend
 - **Supabase** — Backend-as-a-Service
-  - PostgreSQL база данных
+  - PostgreSQL database
   - Row Level Security (RLS)
   - Real-time subscriptions
-  - Authentication
-  - Storage для изображений
+  - JWT Authentication
+  - File storage
 
-### Деплой
-- **Vercel** — хостинг с автоматическим CI/CD
-- **GitHub** — version control
+### DevOps
+- **Vercel** — Hosting & CI/CD
+- **GitHub** — Version control
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 📁 Структура проекта
+## 📁 Project Structure
 
 ```
 wishlist-app/
 ├── src/
-│   ├── components/        # Переиспользуемые компоненты
+│   ├── components/          # Reusable UI components
 │   │   ├── Navbar.tsx
 │   │   ├── WishlistItem.tsx
 │   │   ├── GroupChat.tsx
 │   │   └── ...
-│   ├── pages/            # Страницы приложения
+│   ├── pages/              # Application pages
 │   │   ├── Home.tsx
 │   │   ├── MyWishlist.tsx
 │   │   ├── Friends.tsx
 │   │   ├── Groups.tsx
 │   │   ├── Statistics.tsx
 │   │   └── ...
-│   ├── lib/              # Утилиты и конфигурация
-│   │   ├── supabase.ts   # Supabase клиент
-│   │   ├── currency.ts   # Форматирование валют
+│   ├── lib/                # Utilities & configuration
+│   │   ├── supabase.ts
+│   │   ├── currency.ts
 │   │   └── uploadImage.ts
-│   ├── types/            # TypeScript типы
+│   ├── types/              # TypeScript type definitions
 │   │   └── database.ts
-│   ├── App.tsx           # Главный компонент
-│   └── main.tsx          # Точка входа
-├── public/               # Статические файлы
-├── vercel.json           # Конфигурация Vercel
-├── tailwind.config.js    # Конфигурация Tailwind
+│   ├── App.tsx
+│   └── main.tsx
+├── public/
+├── vercel.json
+├── tailwind.config.js
 └── package.json
 ```
 
 ---
 
-## 🗄️ Архитектура базы данных
+## 🗄️ Database Architecture
 
-### Основные таблицы
+### Core Tables
 
-**user_profiles** — профили пользователей
-- `user_id`, `username`, `display_name`, `avatar_url`, `bio`, `currency`
+| Table | Description |
+|-------|-------------|
+| `user_profiles` | User data (username, avatar, bio, currency) |
+| `wishlist_items` | Gift wishes with details and privacy settings |
+| `collections` | Grouped wishes for events |
+| `friendships` | Social connections with categories |
+| `gift_reservations` | Reserved gifts (hidden from owner) |
+| `gift_contributions` | Crowdfunding contributions |
+| `groups` | Event groups |
+| `group_members` | Group membership with roles |
+| `group_messages` | Real-time chat messages |
 
-**wishlist_items** — желания
-- `user_id`, `title`, `description`, `image_url`, `link`, `price`, `priority`, `visibility`, `collection_id`
-
-**collections** — коллекции желаний
-- `user_id`, `name`, `emoji`, `event_date`
-
-**friendships** — связи между друзьями
-- `user_id`, `friend_id`, `circle` (family/friends/colleagues), `status`
-
-**gift_reservations** — бронирования подарков
-- `item_id`, `reserved_by`, `is_purchased`, `comment`
-
-**gift_contributions** — вклады в складчину
-- `item_id`, `user_id`, `amount`, `note`
-
-**groups** — группы
-- `name`, `description`, `creator_id`
-
-**group_members** — участники групп
-- `group_id`, `user_id`, `role` (admin/member)
-
-**group_messages** — сообщения в чате
-- `group_id`, `user_id`, `message`
+### Key Features
+- Row Level Security (RLS) on all tables
+- Real-time subscriptions for chat
+- Automatic timestamps and soft deletes
+- Foreign key constraints for data integrity
 
 ---
 
-## 🚀 Установка и запуск
+## 🚀 Installation
 
-### Требования
-- Node.js 18+
-- npm или yarn
-- Аккаунт Supabase
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Supabase account
 
-### 1. Клонировать репозиторий
+### 1️⃣ Clone the repository
 ```
-git clone https://github.com/ваш-username/wishlist-app.git
+git clone https://github.com/your-username/wishlist-app.git
 cd wishlist-app
 ```
 
-### 2. Установить зависимости
+### 2️⃣ Install dependencies
 ```
 npm install
 ```
 
-### 3. Настроить переменные окружения
+### 3️⃣ Configure environment variables
 
-Создайте файл `.env` в корне проекта:
+Create `.env` file in the root directory:
 
 ```
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-### 4. Настроить Supabase
+Get these values from your Supabase project: **Settings → API**
 
-1. Создайте проект на [supabase.com](https://supabase.com)
-2. Выполните SQL-миграции из папки `/supabase/migrations`
-3. Настройте Row Level Security (RLS) политики
-4. Включите Realtime для таблицы `group_messages`
+### 4️⃣ Set up Supabase
 
-### 5. Запустить dev-сервер
+1. Create a new project on [supabase.com](https://supabase.com)
+2. Run the SQL migrations from `/database` folder
+3. Configure Row Level Security policies
+4. Enable Realtime for `group_messages` table:
+   ```
+   alter publication supabase_realtime add table group_messages;
+   ```
+
+### 5️⃣ Start development server
 ```
 npm run dev
 ```
 
-Приложение откроется на `http://localhost:5173`
+App will open at `http://localhost:5173`
 
-### 6. Сборка для продакшена
+### 6️⃣ Build for production
 ```
 npm run build
 ```
 
 ---
 
-## 🔐 Безопасность
+## 🔐 Security
 
-- ✅ Row Level Security (RLS) на всех таблицах
-- ✅ Проверка прав доступа на backend уровне
-- ✅ Защита от SQL-инъекций через Supabase
-- ✅ Аутентификация через JWT токены
-- ✅ HTTPS в продакшене
+- ✅ Row Level Security (RLS) enforced on all tables
+- ✅ JWT-based authentication
+- ✅ Server-side permission checks
+- ✅ SQL injection protection via Supabase
+- ✅ HTTPS in production
+- ✅ Secure file uploads with validation
 
 ---
 
 ## 📱 Responsive Design
 
-Приложение полностью адаптировано для:
-- 📱 Мобильных устройств (320px+)
-- 📲 Планшетов (768px+)
-- 💻 Десктопов (1024px+)
-- 🖥️ Широких экранов (1920px+)
+Optimized for all screen sizes:
+- 📱 Mobile: 320px - 767px
+- 📲 Tablet: 768px - 1023px  
+- 💻 Desktop: 1024px - 1919px
+- 🖥️ Wide: 1920px+
 
 ---
 
-## 🎨 Особенности UI/UX
+## 🎨 UI/UX Highlights
 
-- Плавные transition анимации
-- Skeleton loaders для лучшего UX
-- Toast уведомления для всех действий
-- Модальные окна с backdrop blur
-- Градиентные кнопки и карточки
-- Emoji для визуальной привлекательности
-- Поддержка темной темы с сохранением выбора
-
----
-
-## 🔄 Real-time функции
-
-- ✅ Мгновенная синхронизация сообщений в чате
-- ✅ Обновление статуса бронирования
-- ✅ Отслеживание вкладов в складчину
+- **Smooth Animations** — CSS transitions for all interactions
+- **Skeleton Loaders** — Better perceived performance
+- **Toast Notifications** — Real-time user feedback
+- **Modal Windows** — Backdrop blur effects
+- **Gradient Buttons** — Eye-catching CTAs
+- **Emoji Support** — Visual appeal throughout
+- **Theme Persistence** — Remembers user preference
 
 ---
 
-## 📈 Что я изучил в этом проекте
+## 🔄 Real-time Features
 
-- Работа с Supabase (PostgreSQL, RLS, Realtime, Storage)
-- Построение сложной архитектуры БД с множественными связями
-- Реализация real-time функционала
-- TypeScript для типобезопасности
-- React Router v6 для SPA навигации
-- Tailwind CSS для быстрой разработки UI
-- Деплой и CI/CD на Vercel
-- Работа с изображениями (upload, preview, optimization)
+| Feature | Technology |
+|---------|-----------|
+| Group Chat | Supabase Realtime Subscriptions |
+| Gift Reservations | PostgreSQL Triggers + RLS |
+| Contribution Updates | Real-time Database Sync |
 
 ---
 
-## 🚧 Планы развития
+## 📚 What I Learned
 
-- [ ] Push-уведомления
-- [ ] Email-напоминания о событиях
-- [ ] PWA поддержка (офлайн режим)
-- [ ] Экспорт вишлиста в PDF
-- [ ] История подаренных подарков
-- [ ] Интеграция с соцсетями
-- [ ] Поиск и фильтрация желаний
-- [ ] Мультиязычность (i18n)
+This project helped me master:
+
+- **Backend Integration** — Working with Supabase (PostgreSQL, RLS, Realtime, Storage)
+- **Database Design** — Complex schema with multiple relationships and constraints
+- **Real-time Features** — WebSocket subscriptions and live data sync
+- **Type Safety** — TypeScript for robust development
+- **Modern React** — Hooks, context, and performance optimization
+- **Responsive Design** — Mobile-first approach with Tailwind CSS
+- **CI/CD** — Automated deployments with Vercel
+- **Image Handling** — Upload, preview, and optimization
+
+---
+
+## 🚧 Future Enhancements
+
+- [ ] Push notifications for gift reservations
+- [ ] Email reminders for upcoming events
+- [ ] PWA support (offline mode)
+- [ ] PDF export for wishlists
+- [ ] Gift history tracking
+- [ ] Social media integration
+- [ ] Advanced search and filters
+- [ ] Internationalization (i18n)
+- [ ] Gift recommendations based on preferences
 
 ---
 
-## 📄 Лицензия
+## 📄 License
 
-MIT License - можете свободно использовать в своих проектах
+MIT License — feel free to use this project for learning or your own purposes
 
 ---
+
+<div align="center">
+
+### ⭐ If you found this project helpful, please give it a star!
+
+Made with ❤️ and lots of ☕
+
+</div>
+```
+
+***
