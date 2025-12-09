@@ -1,73 +1,266 @@
-# React + TypeScript + Vite
+```markdown
+# 🎁 Wishlist App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современное веб-приложение для создания и управления списками желаний с возможностью совместной покупки подарков.
 
-Currently, two official plugins are available:
+[🔗 Live Demo](https://wishlist-app-nine.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Wishlist App Preview](https://via.placeholder.com/800x400/667eea/ffffff?text=Wishlist+App+Screenshot)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Основные возможности
 
-## Expanding the ESLint configuration
+### 👤 Управление профилем
+- Регистрация и аутентификация пользователей
+- Настраиваемый профиль с аватаром и биографией
+- Публичная ссылка на вишлист (`/u/username`)
+- Поддержка 6 валют: UAH, USD, EUR, RUB, PLN, GBP
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🎯 Списки желаний
+- Создание желаний с фото, описанием, ссылками и ценой
+- Организация в коллекции (День рождения, Новый год и т.д.)
+- Три уровня приоритета (низкий, средний, высокий)
+- Настройка приватности (публичные / друзья / приватные)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 👥 Социальные функции
+- Добавление друзей с категориями (семья, друзья, коллеги)
+- Просмотр вишлистов друзей
+- Бронирование подарков (скрыто от владельца)
+- Комментарии к желаниям
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 💰 Складчина
+- Совместная покупка дорогих подарков
+- Отслеживание вкладов участников
+- Прогресс-бар собранной суммы
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🎉 Группы
+- Создание групп для событий (свадьба, корпоратив и т.д.)
+- Управление участниками (админ/участник)
+- Общие вишлисты группы
+- **Real-time чат** с участниками
+
+### 📊 Статистика
+- Количество желаний по приоритетам
+- Общая стоимость вишлиста
+- Забронированные и доступные подарки
+- Визуализация данных
+
+### 🎨 UX/UI
+- Адаптивный дизайн (desktop, tablet, mobile)
+- Тёмная/светлая тема с автоопределением
+- Плавные анимации и переходы
+- Toast-уведомления
+- Skeleton loaders
+
+---
+
+## 🛠️ Технологический стек
+
+### Frontend
+- **React 18** — UI библиотека
+- **TypeScript** — типизация
+- **Vite** — сборщик и dev-сервер
+- **React Router v6** — маршрутизация
+- **Tailwind CSS** — стилизация
+- **React Hot Toast** — уведомления
+
+### Backend
+- **Supabase** — Backend-as-a-Service
+  - PostgreSQL база данных
+  - Row Level Security (RLS)
+  - Real-time subscriptions
+  - Authentication
+  - Storage для изображений
+
+### Деплой
+- **Vercel** — хостинг с автоматическим CI/CD
+- **GitHub** — version control
+
+---
+
+## 📁 Структура проекта
+
+```
+wishlist-app/
+├── src/
+│   ├── components/        # Переиспользуемые компоненты
+│   │   ├── Navbar.tsx
+│   │   ├── WishlistItem.tsx
+│   │   ├── GroupChat.tsx
+│   │   └── ...
+│   ├── pages/            # Страницы приложения
+│   │   ├── Home.tsx
+│   │   ├── MyWishlist.tsx
+│   │   ├── Friends.tsx
+│   │   ├── Groups.tsx
+│   │   ├── Statistics.tsx
+│   │   └── ...
+│   ├── lib/              # Утилиты и конфигурация
+│   │   ├── supabase.ts   # Supabase клиент
+│   │   ├── currency.ts   # Форматирование валют
+│   │   └── uploadImage.ts
+│   ├── types/            # TypeScript типы
+│   │   └── database.ts
+│   ├── App.tsx           # Главный компонент
+│   └── main.tsx          # Точка входа
+├── public/               # Статические файлы
+├── vercel.json           # Конфигурация Vercel
+├── tailwind.config.js    # Конфигурация Tailwind
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🗄️ Архитектура базы данных
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Основные таблицы
+
+**user_profiles** — профили пользователей
+- `user_id`, `username`, `display_name`, `avatar_url`, `bio`, `currency`
+
+**wishlist_items** — желания
+- `user_id`, `title`, `description`, `image_url`, `link`, `price`, `priority`, `visibility`, `collection_id`
+
+**collections** — коллекции желаний
+- `user_id`, `name`, `emoji`, `event_date`
+
+**friendships** — связи между друзьями
+- `user_id`, `friend_id`, `circle` (family/friends/colleagues), `status`
+
+**gift_reservations** — бронирования подарков
+- `item_id`, `reserved_by`, `is_purchased`, `comment`
+
+**gift_contributions** — вклады в складчину
+- `item_id`, `user_id`, `amount`, `note`
+
+**groups** — группы
+- `name`, `description`, `creator_id`
+
+**group_members** — участники групп
+- `group_id`, `user_id`, `role` (admin/member)
+
+**group_messages** — сообщения в чате
+- `group_id`, `user_id`, `message`
+
+---
+
+## 🚀 Установка и запуск
+
+### Требования
+- Node.js 18+
+- npm или yarn
+- Аккаунт Supabase
+
+### 1. Клонировать репозиторий
 ```
+git clone https://github.com/ваш-username/wishlist-app.git
+cd wishlist-app
+```
+
+### 2. Установить зависимости
+```
+npm install
+```
+
+### 3. Настроить переменные окружения
+
+Создайте файл `.env` в корне проекта:
+
+```
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 4. Настроить Supabase
+
+1. Создайте проект на [supabase.com](https://supabase.com)
+2. Выполните SQL-миграции из папки `/supabase/migrations`
+3. Настройте Row Level Security (RLS) политики
+4. Включите Realtime для таблицы `group_messages`
+
+### 5. Запустить dev-сервер
+```
+npm run dev
+```
+
+Приложение откроется на `http://localhost:5173`
+
+### 6. Сборка для продакшена
+```
+npm run build
+```
+
+---
+
+## 🔐 Безопасность
+
+- ✅ Row Level Security (RLS) на всех таблицах
+- ✅ Проверка прав доступа на backend уровне
+- ✅ Защита от SQL-инъекций через Supabase
+- ✅ Аутентификация через JWT токены
+- ✅ HTTPS в продакшене
+
+---
+
+## 📱 Responsive Design
+
+Приложение полностью адаптировано для:
+- 📱 Мобильных устройств (320px+)
+- 📲 Планшетов (768px+)
+- 💻 Десктопов (1024px+)
+- 🖥️ Широких экранов (1920px+)
+
+---
+
+## 🎨 Особенности UI/UX
+
+- Плавные transition анимации
+- Skeleton loaders для лучшего UX
+- Toast уведомления для всех действий
+- Модальные окна с backdrop blur
+- Градиентные кнопки и карточки
+- Emoji для визуальной привлекательности
+- Поддержка темной темы с сохранением выбора
+
+---
+
+## 🔄 Real-time функции
+
+- ✅ Мгновенная синхронизация сообщений в чате
+- ✅ Обновление статуса бронирования
+- ✅ Отслеживание вкладов в складчину
+
+---
+
+## 📈 Что я изучил в этом проекте
+
+- Работа с Supabase (PostgreSQL, RLS, Realtime, Storage)
+- Построение сложной архитектуры БД с множественными связями
+- Реализация real-time функционала
+- TypeScript для типобезопасности
+- React Router v6 для SPA навигации
+- Tailwind CSS для быстрой разработки UI
+- Деплой и CI/CD на Vercel
+- Работа с изображениями (upload, preview, optimization)
+
+---
+
+## 🚧 Планы развития
+
+- [ ] Push-уведомления
+- [ ] Email-напоминания о событиях
+- [ ] PWA поддержка (офлайн режим)
+- [ ] Экспорт вишлиста в PDF
+- [ ] История подаренных подарков
+- [ ] Интеграция с соцсетями
+- [ ] Поиск и фильтрация желаний
+- [ ] Мультиязычность (i18n)
+
+---
+
+## 📄 Лицензия
+
+MIT License - можете свободно использовать в своих проектах
+
+---
